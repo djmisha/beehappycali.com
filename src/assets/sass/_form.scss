@@ -1,0 +1,23 @@
+form {
+  width: 100%;
+
+  input,
+  textarea,
+  button {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: .5rem 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  ul {
+    list-style: none;
+  }
+}

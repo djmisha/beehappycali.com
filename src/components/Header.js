@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import { Link } from 'gatsby';
+
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,7 @@ export default class Header extends Component {
             className="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
             href="/#"
           >
-            {config.siteTitle}
+            {config.subHeading}
           </a>
 
           <button
@@ -42,47 +43,47 @@ export default class Header extends Component {
             <ul className="navbar-nav text-center mx-auto">
               <li
                 className={`nav-item px-lg-4 ${
-                  activeLink === 'home' ? 'active' : ''
+                  activeLink === 'home' ? '' : ''
                 }`}
               >
-                <Link className="nav-link text-uppercase text-expanded" to="/">
+                <Link className="nav-link text-uppercase text-expanded" to="#navbarResponsive">
                   Home
                 </Link>
               </li>
               <li
                 className={`nav-item px-lg-4 ${
-                  activeLink === 'about' ? 'active' : ''
+                  activeLink === 'about' ? '' : ''
                 }`}
               >
                 <Link
                   className="nav-link text-uppercase text-expanded"
-                  to="/about"
+                  to="#Bee-Removal-Relocation"
                 >
-                  About
+                  Bee Removal & Relocation
                 </Link>
               </li>
               <li
                 className={`nav-item px-lg-4 ${
-                  activeLink === 'products' ? 'active' : ''
+                  activeLink === 'products' ? '' : ''
                 }`}
               >
                 <Link
                   className="nav-link text-uppercase text-expanded"
-                  to="/products"
+                  to="#Beekeeper-Services"
                 >
-                  Products
+                  Beekeeper Services
                 </Link>
               </li>
               <li
                 className={`nav-item px-lg-4 ${
-                  activeLink === 'store' ? 'active' : ''
+                  activeLink === 'store' ? '' : ''
                 }`}
               >
                 <Link
                   className="nav-link text-uppercase text-expanded"
-                  to="/store"
+                  to="#Contact"
                 >
-                  Store
+                  Contact
                 </Link>
               </li>
             </ul>
