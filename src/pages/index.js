@@ -139,7 +139,7 @@ const IndexPage = () => (
                 <br/>We are available 24/7 for a free consulation. 
                 <br/>Text or call us for a fast responce 
                 <br/>
-                <a href='tel:+18589227537'>(858) 922-7537</a>
+                <a href='tel:+18589227535'>(858) 922-7535</a>
               </p>
             </div>
           </div>

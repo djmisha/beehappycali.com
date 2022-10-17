@@ -1,9 +1,12 @@
 form {
   width: 100%;
 
+  label {
+    display: block;
+  }
+
   input,
-  textarea,
-  button {
+  textarea {
     border: 2px solid #ccc;
     border-radius: 4px;
     padding: .5rem 1rem;
@@ -11,13 +14,12 @@ form {
     max-width: 600px;
     margin: 0 auto;
     background-color: white;
+    color: #000;
   }
 
   textarea {
     height: 150px;
   }
 
-  ul {
-    list-style: none;
-  }
+
 }
