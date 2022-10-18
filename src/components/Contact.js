@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { navigate } from 'gatsby-link';
+import JSConfetti from 'js-confetti'
 
 function encode(data) {
   return Object.keys(data)
@@ -12,6 +12,14 @@ const Contact = () => {
   let [state, setState] = useState([])
   let [hasError, setHasError] = useState(false)
   let [success, setSuccess] = useState(false)
+
+  const jsConfetti = new JSConfetti()
+
+  const handleBees = () => {
+    jsConfetti.addConfetti({
+      emojis: ['🐝', '🍯', '😍'],
+   })
+  }
 
   const handleChange = (e, id) => {
     const fieldName = e.target.name;
@@ -100,6 +108,7 @@ const Contact = () => {
       })
       .then(() => setSuccess(true))
       .then(() => handleSuccess(form))
+      .then(() => handleBees())
       .catch(error => alert(error));
     }
 

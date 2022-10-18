@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import config from '../../config';
 import { Link } from 'gatsby';
+import Bee from './Bee';
 
 export default class Header extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class Header extends Component {
             className="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
             href="/#"
           >
-            🐝 {config.subHeading}
+            <Bee /> {config.subHeading}
           </a>
 
           <button

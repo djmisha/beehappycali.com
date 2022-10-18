@@ -18,6 +18,7 @@
         "gatsby-plugin-react-helmet": "^5.2.0",
         "gatsby-plugin-sass": "^5.2.0",
         "gatsby-react-router-scroll": "^5.4.0",
+        "js-confetti": "^0.11.0",
         "node-sass": "^6.0.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",

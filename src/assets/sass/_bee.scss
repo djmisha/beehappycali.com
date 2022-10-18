@@ -1,0 +1,24 @@
+.bee {
+  display: inline-block;
+  animation: hover 2s ease-in-out infinite;
+  background: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@keyframes hover {
+  0% {
+    transform: translateY(0px) scaleX(-1);
+  }
+
+  50% {
+    transform: translateY(-15px) scaleX(-1);
+  }
+
+  100% {
+    transform: translateY(0px) scaleX(-1);
+  }
+}
