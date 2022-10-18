@@ -6,9 +6,9 @@ import product1 from '../assets/images/products-01.jpg';
 import product2 from '../assets/images/products-02.jpg';
 import JSConfetti from 'js-confetti'
 
-const isBrowser = typeof window !== "undefined"
 
 const IndexPage = () => {
+  const isBrowser = typeof window !== "undefined"
   
   const handleClick = () => {
     if(isBrowser) {

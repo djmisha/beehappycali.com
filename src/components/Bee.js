@@ -1,10 +1,10 @@
 import React from "react";
 import JSConfetti from 'js-confetti'
 
-const isBrowser = typeof window !== "undefined"
 
 const Bee = () => {
-
+  const isBrowser = typeof window !== "undefined"
+  
   const handleBees = () => {
     if(isBrowser) {
         const jsConfetti = new JSConfetti()

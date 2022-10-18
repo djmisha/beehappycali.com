@@ -7,10 +7,9 @@ function encode(data) {
     .join('&');
 }
 
-const isBrowser = typeof window !== "undefined"
-
 const Contact = () => {
-
+  
+  const isBrowser = typeof window !== "undefined"
   let [state, setState] = useState([])
   let [hasError, setHasError] = useState(false)
   let [success, setSuccess] = useState(false)
