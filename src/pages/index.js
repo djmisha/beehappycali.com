@@ -6,13 +6,17 @@ import product1 from '../assets/images/products-01.jpg';
 import product2 from '../assets/images/products-02.jpg';
 import JSConfetti from 'js-confetti'
 
-const IndexPage = () => {
-  const jsConfetti = new JSConfetti()
+const isBrowser = typeof window !== "undefined"
 
+const IndexPage = () => {
+  
   const handleClick = () => {
-    jsConfetti.addConfetti({
-      emojis: ['🐝', '🍯', '😍'],
-   })
+    if(isBrowser) {
+      const jsConfetti = new JSConfetti()
+      jsConfetti.addConfetti({
+        emojis: ['🐝', '🍯', '😍'],
+      })
+    }
   }
   
   return (

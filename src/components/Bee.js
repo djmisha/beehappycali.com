@@ -1,12 +1,17 @@
 import React from "react";
 import JSConfetti from 'js-confetti'
 
+const isBrowser = typeof window !== "undefined"
+
 const Bee = () => {
-  const jsConfetti = new JSConfetti()
+
   const handleBees = () => {
-    jsConfetti.addConfetti({
-      emojis: ['😍', '🥰', '❤️'],
-   })
+    if(isBrowser) {
+        const jsConfetti = new JSConfetti()
+        jsConfetti.addConfetti({
+          emojis: ['😍', '🥰', '❤️'],
+      })
+    }
   }
 
   return (

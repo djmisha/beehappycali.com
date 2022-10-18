@@ -7,6 +7,9 @@ module.exports = {
     description: config.siteDescription,
     keywords: config.siteKeywords,
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
