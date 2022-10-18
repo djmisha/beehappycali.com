@@ -21,7 +21,7 @@ const IndexPage = () => (
               <span className="section-heading-lower">Bee Removal</span>
             </h2>
             <p className="mb-3">
-              If you need assistance with removing a bee hive or swarm near you home - we can help.  
+              If you need assistance with removing a bee hive or swarm near your home - we can help.  
               Get in touch today about our bee removal and relocation services. 
               You'll bee happy that you did! 
             </p>
