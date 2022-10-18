@@ -57,7 +57,7 @@ const IndexPage = () => {
               <div className="bg-faded p-5 d-flex ml-auto rounded">
                 <h2 className="section-heading mb-0">
                   <span className="section-heading-upper">
-                    <strike>&nbsp;Extermination&nbsp;</strike> Humane & Gentle
+                     Humane & Gentle
                   </span>
                   <span className="section-heading-lower">
                     Relocation
@@ -88,14 +88,13 @@ const IndexPage = () => {
           <div className="row">
             <div className="col-xl-9 mx-auto">
               <div className="cta-inner text-center rounded">
-                <h2 className="section-heading mb-4">
+                <div className="section-heading mb-4 h2">
                   <span className="section-heading-upper">Bee Educated</span>
                   <span className="section-heading-lower">Did You Know?</span>
-                </h2>
+                </div>
                 <p className="mb-0">
-                <strong>Bees pollinate 1 in 3 bites of food we eat. </strong>
-                Bees are an essential part of our agriculture, and their health directly impacts food security.
-                
+                  <strong>Bees pollinate 1 in 3 bites of food we eat. </strong>
+                  Bees are an essential part of our agriculture, and their health directly impacts food security.
                 </p>
                 <div className="intro-button mx-auto mt-4">
                   <button className="btn btn-light btn-xl" onClick={handleClick}>

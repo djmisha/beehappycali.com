@@ -39,6 +39,7 @@ class Layout extends Component {
             >
               <html lang="en" />
             </Helmet>
+            <div className="bg-mobile"></div>
             <div className={'page-top'}>
               {!noSiteHeader ? <SiteHeader /> : null}
               {!noHeader ? <Header activeLink={activeLink} /> : null}
