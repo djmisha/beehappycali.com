@@ -7,18 +7,21 @@ function encode(data) {
     .join('&');
 }
 
+const isBrowser = typeof window !== "undefined"
+
 const Contact = () => {
 
   let [state, setState] = useState([])
   let [hasError, setHasError] = useState(false)
   let [success, setSuccess] = useState(false)
 
-  const jsConfetti = new JSConfetti()
-
   const handleBees = () => {
-    jsConfetti.addConfetti({
-      emojis: ['🐝', '🍯', '😍'],
-   })
+    if(isBrowser) {
+        const jsConfetti = new JSConfetti()
+        jsConfetti.addConfetti({
+          emojis: ['🐝', '🍯', '😍'],
+      })
+    }
   }
 
   const handleChange = (e, id) => {
