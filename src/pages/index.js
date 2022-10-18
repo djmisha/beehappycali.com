@@ -26,7 +26,7 @@ const IndexPage = () => (
               You'll bee happy that you did! 
             </p>
             <div className="intro-button mx-auto">
-              <a className="btn btn-primary btn-xl" href="/#">
+              <a className="btn btn-primary btn-xl" href="#Bee-Relocation">
                 Learn More
               </a>
             </div>
@@ -130,17 +130,26 @@ const IndexPage = () => (
                 <span className="section-heading-upper">We'll Bee Happy to Help</span>
                 <span className="section-heading-lower">Get in Touch</span>
               </h2>
-              <p className="mb-0">
-                
-              </p>
               <Contact />
-              <p className="mb-0">
-                <br/>
-                <br/>We are available 24/7 for a free consulation. 
-                <br/>Text or call us for a fast responce 
-                <br/>
-                <a href='tel:+18589227535'>(858) 922-7535</a>
-              </p>
+              <br />
+              <ul className="list-unstyled list-hours mb-5 text-center mx-auto">
+                <li className="list-unstyled-item list-hours-item"> </li>
+                <li className="list-unstyled-item list-hours-item">
+                  Available 24/7 
+                </li>
+                <li className="list-unstyled-item list-hours-item">
+                  Free Consulation
+                </li>
+                <li className="list-unstyled-item list-hours-item">
+                  Fast Responce
+                </li>
+                <li className="list-unstyled-item list-hours-item">
+                  Text or Call
+                </li>
+                <li className="list-unstyled-item list-hours-item">
+                  <a href='tel:+18589227535'>(858) 922-7535</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

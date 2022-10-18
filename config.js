@@ -5,8 +5,8 @@ module.exports = {
   manifestName: 'beehappycali',
   manifestShortName: 'beehappycali', // max 12 characters
   manifestStartUrl: '/',
-  manifestBackgroundColor: '#663399',
-  manifestThemeColor: '#663399',
+  manifestBackgroundColor: '#2F170F',
+  manifestThemeColor: '#2F170F',
   manifestDisplay: 'standalone',
   manifestIcon: 'src/assets/img/website-icon.png',
   pathPrefix: `/`, // This path is subpath of your hosting https://domain/portfolio

@@ -23,7 +23,7 @@ export default class Header extends Component {
             className="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
             href="/#"
           >
-            {config.subHeading}
+            🐝 {config.subHeading}
           </a>
 
           <button

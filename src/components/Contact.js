@@ -11,6 +11,7 @@ const Contact = () => {
 
   let [state, setState] = useState([])
   let [hasError, setHasError] = useState(false)
+  let [success, setSuccess] = useState(false)
 
   const handleChange = (e, id) => {
     const fieldName = e.target.name;
@@ -59,13 +60,17 @@ const Contact = () => {
       return false;
     };
   }
+
+  const handleSuccess = (form) => {
+    form.classList.add('hidden')
+  }
   
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
 
     checkForErrors();
-
+    
     if(!checkForErrors()) {
       // remove id's from State 
       const cleanData = state.map(obj => {
@@ -82,6 +87,9 @@ const Contact = () => {
         })
       })
 
+      handleSuccess(form)
+      success = true;
+
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -90,7 +98,8 @@ const Contact = () => {
           ...objectData,
         }),
       })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => setSuccess(true))
+      .then(() => handleSuccess(form))
       .catch(error => alert(error));
     }
 
@@ -98,6 +107,7 @@ const Contact = () => {
 
     return (
       <div id="RequestAppointment">
+        {success && <p className='success'>Your message was sent successfully! Someone will be in touch with you shortly</p>}
         <form
           name="beehappycali.com"
           method="post"
