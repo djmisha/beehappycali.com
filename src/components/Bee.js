@@ -5,7 +5,7 @@ const Bee = () => {
   const jsConfetti = new JSConfetti()
   const handleBees = () => {
     jsConfetti.addConfetti({
-      emojis: ['😍', '🥰'],
+      emojis: ['😍', '🥰', '❤️'],
    })
   }
 
