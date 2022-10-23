@@ -4,19 +4,12 @@ import Contact from '../components/Contact'
 import intro from '../assets/images/intro.jpg';
 import product1 from '../assets/images/products-01.jpg';
 import product2 from '../assets/images/products-02.jpg';
-import JSConfetti from 'js-confetti'
-
+import ConfettiMaker from '../components/ConfettiMaker';
+import Online from '../components/Online';
 
 const IndexPage = () => {
-  const isBrowser = typeof window !== "undefined"
-  
   const handleClick = () => {
-    if(isBrowser) {
-      const jsConfetti = new JSConfetti()
-      jsConfetti.addConfetti({
-        emojis: ['🐝', '🍯', '😍'],
-      })
-    }
+    ConfettiMaker(['🐝', '🍯', '😍']);
   }
   
   return (
@@ -153,6 +146,7 @@ const IndexPage = () => {
                 <br />
                 <ul className="list-unstyled list-hours mb-5 text-center mx-auto">
                   <li className="list-unstyled-item list-hours-item"> </li>
+                  <li className="list-unstyled-item list-hours-item"> <Online /> </li>
                   <li className="list-unstyled-item list-hours-item">
                     Available 24/7 
                   </li>

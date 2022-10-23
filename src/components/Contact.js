@@ -1,119 +1,71 @@
 import React, { useState } from 'react';
-import JSConfetti from 'js-confetti'
-
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-}
+import ConfettiMaker from './ConfettiMaker';
 
 const Contact = () => {
-  
-  const isBrowser = typeof window !== "undefined"
-  let [state, setState] = useState([])
+  const confetti = ['🐝', '🍯', '😍']
+  let [formState, setFormState] = useState({})
   let [hasError, setHasError] = useState(false)
   let [success, setSuccess] = useState(false)
 
-  const handleBees = () => {
-    if(isBrowser) {
-        const jsConfetti = new JSConfetti()
-        jsConfetti.addConfetti({
-          emojis: ['🐝', '🍯', '😍'],
-      })
-    }
+  function encodeDataToURI(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
   }
 
-  const handleChange = (e, id) => {
+  const handleInputChange = (e) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value; 
-    const fieldID = id;
-
-    // create input object
-    const input = {
-      [fieldName]: fieldValue,
-      "id": fieldID,
-    }
-    
-    // create new state 
-    const newState = state.map((obj) => {
-      // input data if id found
-      if(obj.id === fieldID) {
-        // update the field with new input data
-        return {...obj, [fieldName]: fieldValue}
-      }
-      return obj;
-    })
-
-    
-    let inputFoundinState = false;
-
-    // chech the state for our input id and return true if found 
-    for (let i = 0; i < state.length; i++) {
-      if(state[i].id === fieldID) inputFoundinState = true;
-    }
-
-    // update the state if input found with the state
-    if(inputFoundinState) setState([...newState]) 
-    
-    // or add the input to the current state
-    if(!inputFoundinState) setState([...state, input])
-
+    let newFormState = formState;
+    newFormState[fieldName] = fieldValue;
+    setFormState(newFormState)
   };
   
-  const checkForErrors = () => {
-    if(!state || state.length < 5 || state.length === 6 ) {
-      setHasError(true)
-      return true;
-    };
-    if(state.length === 5) {
-      setHasError(false)
-      return false;
-    };
+  const handleFormErrors = () => {
+    const keys = Object.keys(formState)
+    const objSize = keys.length;
+    let error = true;
+    
+    // are there 5 fields in the object
+    if (objSize === 5) error = false;
+
+    // are there any fields that are empty strings ''
+    keys.forEach(key => {
+      if (formState[key] === '') error = true
+    });
+
+    error ? setHasError(true) : setHasError(false);
+    return error;
   }
 
   const handleSuccess = (form) => {
-    form.classList.add('hidden')
+    setSuccess(true);
+    form.classList.add('hidden');
+    ConfettiMaker(confetti);
   }
   
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-
-    checkForErrors();
+    const hasErrors = handleFormErrors();
     
-    if(!checkForErrors()) {
-      // remove id's from State 
-      const cleanData = state.map(obj => {
-        delete obj.id;
-        return obj;
-      })
+    const test = encodeDataToURI({
+      'form-name': form.getAttribute('name'),
+      ...formState,
+    })
 
-      let objectData = {} 
-      
-      // add values to our new data Object
-      cleanData.forEach((obj) => {
-        Object.keys(obj).forEach(key => {
-          objectData[key] = obj[key]
-        })
-      })
-
-      handleSuccess(form)
-      success = true;
-
+    if (!hasErrors) {
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
+        body: encodeDataToURI({
           'form-name': form.getAttribute('name'),
-          ...objectData,
+          ...formState,
         }),
       })
-      .then(() => setSuccess(true))
       .then(() => handleSuccess(form))
-      .then(() => handleBees())
       .catch(error => alert(error));
     }
-
   };
 
     return (
@@ -122,7 +74,7 @@ const Contact = () => {
         <form
           name="beehappycali.com"
           method="post"
-          action="/thank-you/"
+          action="/thank-you/" // this is no longer needed, since success happens on the page
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
@@ -132,8 +84,8 @@ const Contact = () => {
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
               <label>
-                Don’t fill this out:{' '}
-                <input name="bot-field" onChange={(e) => handleChange(e, 1)} />
+                Don't fill this out:{' '}
+                <input name="bot-field" onChange={(e) => handleInputChange(e)} />
               </label>
             </p>
 
@@ -145,7 +97,7 @@ const Contact = () => {
                 name="fullname"
                 id="name"
                 placeholder="Full Name"
-                onChange={(e) => handleChange(e, 2)}
+                onChange={(e) => handleInputChange(e)}
               />
               </label>
             </div>
@@ -156,7 +108,7 @@ const Contact = () => {
                 name="email"
                 id="email"
                 placeholder="Email"
-                onChange={(e) => handleChange(e, 3)}
+                onChange={(e) => handleInputChange(e)}
               />
               </label>
             </div>
@@ -167,7 +119,7 @@ const Contact = () => {
                 name="phone"
                 id="phone"
                 placeholder="Phone"
-                onChange={(e) => handleChange(e, 4)}
+                onChange={(e) => handleInputChange(e)}
               />
               </label>
             </div>
@@ -178,7 +130,7 @@ const Contact = () => {
                   name="preffereddate"
                   id="preffereddate"
                   placeholder="Preffered Date/Time"
-                  onChange={(e) => handleChange(e, 5)}
+                  onChange={(e) => handleInputChange(e)}
                 />
               </label>
             </div>
@@ -188,7 +140,7 @@ const Contact = () => {
                   name="message"
                   id="message"
                   placeholder="Message"
-                  onChange={(e) => handleChange(e, 6)}
+                  onChange={(e) => handleInputChange(e)}
                 />
               </label>
             </div>
