@@ -2,8 +2,14 @@
 
 ## Phase Four 
 
--  FORM: add error if field is empty string ''
--  FORM: add shake effect to empty fields, and color change
+- improve images 
+- add how mny times you clicked like bees. 
+- add scroll to form after submit 
+- add flyout chat bee with scrolling to form, and text
+- phone number bigger, with icon, and better color
+- [✓] FORM: add shake effect to empty fields, and color change
+- [✓] add we are online
+- [✓] FORM: add error if field is empty string ''
 
 ## Phase Three 
 
