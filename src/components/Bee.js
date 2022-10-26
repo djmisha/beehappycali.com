@@ -31,7 +31,7 @@ const Bee = () => {
 
   const handleClick = () => {
     if (offset > 200) {
-      navigate('#Contact');
+      navigate('#RequestAppointment');
       ConfettiMaker(['🐝']);
     }
     if (offset < 200) {
