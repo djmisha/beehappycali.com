@@ -42,7 +42,7 @@ const Contact = () => {
 
   const handleSuccess = (form) => {
     setSuccess(true);
-    navigate('#RequestAppointment');
+    navigate('#Contact');
     form.classList.add('hidden');
     ConfettiMaker(confetti);
   };

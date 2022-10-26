@@ -39,7 +39,7 @@ const Bee = () => {
   };
 
   return (
-    <Link to="#RequestAppointment">
+    <Link to="#Contact">
       <button className={classes} onClick={handleClick} onScroll={handleScroll}>
         {message && (
           <div className="chat-bubble">
