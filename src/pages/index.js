@@ -148,8 +148,7 @@ const IndexPage = () => {
                 <ul className="list-unstyled list-hours mb-5 text-center mx-auto">
                   <li className="list-unstyled-item list-hours-item"> </li>
                   <li className="list-unstyled-item list-hours-item">
-                    {' '}
-                    <Online />{' '}
+                    <Online />
                   </li>
                   <li className="list-unstyled-item list-hours-item">
                     Available 24/7
@@ -164,7 +163,9 @@ const IndexPage = () => {
                     Text or Call
                   </li>
                   <li className="list-unstyled-item list-hours-item">
-                    <a href="tel:+18589227535">(858) 922-7535</a>
+                    <a href="tel:+18589227535" className="bee-phone">
+                      <i class="fa fa-phone"></i> (858) 922-7535
+                    </a>
                   </li>
                 </ul>
               </div>

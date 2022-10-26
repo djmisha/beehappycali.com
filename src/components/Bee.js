@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ConfettiMaker from './ConfettiMaker';
 import isBrowser from '../helpers/isBrowser';
-import { navigate } from 'gatsby-link';
+import Link from 'gatsby-link';
 
 const Bee = () => {
   let [classes, setClassName] = useState('bee top');
@@ -31,7 +31,6 @@ const Bee = () => {
 
   const handleClick = () => {
     if (offset > 200) {
-      navigate('#RequestAppointment');
       ConfettiMaker(['🐝']);
     }
     if (offset < 200) {
@@ -40,14 +39,16 @@ const Bee = () => {
   };
 
   return (
-    <button className={classes} onClick={handleClick} onScroll={handleScroll}>
-      {message && (
-        <div className="chat-bubble">
-          <p>{message}</p>
-        </div>
-      )}
-      <div className="happy-bee">🐝</div>
-    </button>
+    <Link to="#RequestAppointment">
+      <button className={classes} onClick={handleClick} onScroll={handleScroll}>
+        {message && (
+          <div className="chat-bubble">
+            <p>{message}</p>
+          </div>
+        )}
+        <div className="happy-bee">🐝</div>
+      </button>
+    </Link>
   );
 };
 

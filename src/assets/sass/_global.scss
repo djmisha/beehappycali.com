@@ -97,3 +97,11 @@ p {
 .bg-faded {
   background-color: fade-out($white, 0.15);
 }
+
+.bee-phone {
+  color: $secondary;
+  font-size: 1.2rem;
+  i {
+    margin-right: 2px;
+  }
+}
