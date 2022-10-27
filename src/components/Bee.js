@@ -7,6 +7,7 @@ const Bee = () => {
   let [classes, setClassName] = useState('bee top');
   let [message, setMessage] = useState();
   let [offset, setOffset] = useState(0);
+  let [url, setUrl] = useState('#');
 
   useEffect(() => {
     if (isBrowser()) {
@@ -22,16 +23,19 @@ const Bee = () => {
     if (distance > 200) {
       setClassName('bee bottom');
       setMessage("What's Buzzin' ?");
+      setUrl('#Contact');
     }
     if (distance < 200) {
       setClassName('bee top');
       setMessage('');
+      setUrl('#');
     }
   };
 
   const handleClick = () => {
     if (offset > 200) {
       ConfettiMaker(['🐝']);
+      setUrl('#Contact');
     }
     if (offset < 200) {
       ConfettiMaker(['😍', '🥰', '❤️']);
@@ -39,16 +43,22 @@ const Bee = () => {
   };
 
   return (
-    <Link to="#Contact">
-      <button className={classes} onClick={handleClick} onScroll={handleScroll}>
-        {message && (
-          <div className="chat-bubble">
-            <p>{message}</p>
-          </div>
-        )}
-        <div className="happy-bee">🐝</div>
-      </button>
-    </Link>
+    <>
+      <Link to={url}>
+        <button
+          className={classes}
+          onClick={handleClick}
+          onScroll={handleScroll}
+        >
+          {message && (
+            <div className="chat-bubble">
+              <p>{message}</p>
+            </div>
+          )}
+          <div className="happy-bee">🐝</div>
+        </button>
+      </Link>
+    </>
   );
 };
 
