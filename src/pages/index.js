@@ -157,7 +157,7 @@ const IndexPage = () => {
                     Free Consulation
                   </li>
                   <li className="list-unstyled-item list-hours-item">
-                    Fast Responce
+                    Fast Response
                   </li>
                   <li className="list-unstyled-item list-hours-item">
                     Text or Call
