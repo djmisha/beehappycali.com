@@ -107,7 +107,7 @@ const IndexPage = () => {
               <div className="bg-faded p-5 d-flex mr-auto rounded">
                 <h2 className="section-heading mb-0">
                   <span className="section-heading-upper">
-                    Experienced & Proffesional
+                    Experienced & Professional
                   </span>
                   <span className="section-heading-lower">Beekeeper</span>
                 </h2>
