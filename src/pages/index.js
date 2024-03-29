@@ -4,6 +4,7 @@ import Contact from '../components/Contact';
 import intro from '../assets/images/intro.jpg';
 import product1 from '../assets/images/products-01.jpg';
 import product2 from '../assets/images/products-02.jpg';
+import product3 from '../assets/images/products-03.jpg';
 import ConfettiMaker from '../components/ConfettiMaker';
 import Online from '../components/Online';
 
@@ -125,6 +126,36 @@ const IndexPage = () => {
                   professional near you. From hive inspection, maintenance, to
                   re-queening a hive and honey extraction. We are happy to
                   assist with all your beekeeping needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-section" id="Honey-For-Sale">
+        <div className="container">
+          <div className="product-item">
+            <div className="product-item-title d-flex">
+              <div className="bg-faded p-5 d-flex ml-auto rounded">
+                <h2 className="section-heading mb-0">
+                  <span className="section-heading-upper">Unfiltered and Raw</span>
+                  <span className="section-heading-lower">Honey for Sale</span>
+                </h2>
+              </div>
+            </div>
+            <img
+              className="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+              src={product3}
+              alt="Unfiltered and Raw Honey for Sale"
+            />
+            <div className="product-item-description d-flex mr-auto">
+              <div className="bg-faded p-5 rounded">
+                <p className="mb-0">
+                  Unfiltered and raw honey retains all
+                  the natural vitamins, enzymes, phytonutrients and other
+                  nutritional elements that are often destroyed by heat
+                  processing. Buy honey that is pure, natural, and delicious.
                 </p>
               </div>
             </div>
